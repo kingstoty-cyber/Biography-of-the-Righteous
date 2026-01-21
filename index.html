@@ -1,0 +1,1313 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>قصص القيم والشجاعة</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;800&family=Amiri&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      /* السمة الذهبية الليلية (الافتراضية) */
+      --primary-color: #c5a059;
+      --primary-dark: #8e6d2d;
+      --secondary-color: #2ecc71;
+      --accent-color: #3498db;
+      --bg-color: #0a0b10;
+      --card-bg: #16181d;
+      --text-color: #e0e0e0;
+      --soft-white: rgba(255, 255, 255, 0.05);
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --theme-name: "ذهبي ليلي";
+    }
+
+    /* سمة أزرق سماوي ليلي */
+    .theme-blue {
+      --primary-color: #3498db;
+      --primary-dark: #1d6fa5;
+      --secondary-color: #2ecc71;
+      --accent-color: #9b59b6;
+      --bg-color: #0a1520;
+      --card-bg: #16202d;
+      --text-color: #e0f0ff;
+      --theme-name: "أزرق سماوي";
+    }
+
+    /* سمة أخضر نقي ليلي */
+    .theme-green {
+      --primary-color: #2ecc71;
+      --primary-dark: #27ae60;
+      --secondary-color: #3498db;
+      --accent-color: #f39c12;
+      --bg-color: #0a100b;
+      --card-bg: #16201a;
+      --text-color: #e0ffe7;
+      --theme-name: "أخضر نقي";
+    }
+
+    /* سمة أرجواني ليلي */
+    .theme-purple {
+      --primary-color: #9b59b6;
+      --primary-dark: #8e44ad;
+      --secondary-color: #e74c3c;
+      --accent-color: #3498db;
+      --bg-color: #150a20;
+      --card-bg: #20162d;
+      --text-color: #f0e0ff;
+      --theme-name: "أرجواني";
+    }
+
+    /* سمة برتقالي دافئ ليلي */
+    .theme-orange {
+      --primary-color: #e67e22;
+      --primary-dark: #d35400;
+      --secondary-color: #2ecc71;
+      --accent-color: #3498db;
+      --bg-color: #1a0e0a;
+      --card-bg: #2d1c16;
+      --text-color: #ffeae0;
+      --theme-name: "برتقالي دافئ";
+    }
+
+    /* سمة ذهبي نهاري */
+    .theme-gold-day {
+      --primary-color: #d4a85a;
+      --primary-dark: #a67b38;
+      --secondary-color: #2ecc71;
+      --accent-color: #3498db;
+      --bg-color: #f6f7f9;
+      --card-bg: #ffffff;
+      --text-color: #111827;
+      --soft-white: rgba(0, 0, 0, 0.04);
+      --theme-name: "ذهبي نهاري";
+    }
+
+    /* سمة أزرق نهاري */
+    .theme-blue-day {
+      --primary-color: #3498db;
+      --primary-dark: #1d6fa5;
+      --secondary-color: #2ecc71;
+      --accent-color: #e74c3c;
+      --bg-color: #f2f8fe;
+      --card-bg: #ffffff;
+      --text-color: #06253f;
+      --soft-white: rgba(0, 0, 0, 0.04);
+      --theme-name: "أزرق نهاري";
+    }
+
+    /* سمة أخضر نهاري */
+    .theme-green-day {
+      --primary-color: #2ecc71;
+      --primary-dark: #27ae60;
+      --secondary-color: #3498db;
+      --accent-color: #f39c12;
+      --bg-color: #f2f9f5;
+      --card-bg: #ffffff;
+      --text-color: #0a2917;
+      --soft-white: rgba(0, 0, 0, 0.04);
+      --theme-name: "أخضر نهاري";
+    }
+
+    /* سمة أرجواني نهاري */
+    .theme-purple-day {
+      --primary-color: #9b59b6;
+      --primary-dark: #8e44ad;
+      --secondary-color: #e74c3c;
+      --accent-color: #3498db;
+      --bg-color: #f8f2ff;
+      --card-bg: #ffffff;
+      --text-color: #1e0a28;
+      --soft-white: rgba(0, 0, 0, 0.04);
+      --theme-name: "أرجواني نهاري";
+    }
+
+    /* سمة برتقالي نهاري */
+    .theme-orange-day {
+      --primary-color: #e67e22;
+      --primary-dark: #d35400;
+      --secondary-color: #2ecc71;
+      --accent-color: #3498db;
+      --bg-color: #fff5e6;
+      --card-bg: #ffffff;
+      --text-color: #331a00;
+      --soft-white: rgba(0, 0, 0, 0.04);
+      --theme-name: "برتقالي نهاري";
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background-color 0.5s ease, color 0.5s ease;
+    }
+
+    /* شريط التنقل السفلي */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      background: var(--card-bg);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      border-top: 1px solid var(--soft-white);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: #7f8c8d;
+      text-decoration: none;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: var(--transition);
+      background: none;
+      border: none;
+      padding: 8px;
+      border-radius: 10px;
+    }
+
+    .nav-item.active {
+      color: var(--primary-color);
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+    }
+
+    .nav-item i {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+    }
+
+    /* المحتوى الرئيسي */
+    .main-content {
+      padding: 20px;
+      padding-bottom: 90px;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .header-section {
+      text-align: center;
+      padding: 40px 0;
+      background: linear-gradient(to bottom, var(--card-bg), transparent);
+      border-radius: 0 0 30px 30px;
+      margin-bottom: 25px;
+      transition: var(--transition);
+    }
+
+    .header-section h1 {
+      font-family: 'Amiri', serif;
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin: 0;
+      transition: var(--transition);
+    }
+
+    /* تصميم البطاقات */
+    .card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border: 1px solid var(--soft-white);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 4px; height: 100%;
+      background: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--primary-color);
+      transition: var(--transition);
+    }
+
+    /* فلتر الأزرار */
+    .filter-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+
+    .filter-btn {
+      background: var(--soft-white);
+      border: none;
+      color: var(--text-color);
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-family: 'Tajawal', sans-serif;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+    }
+
+    .filter-btn.active {
+      background: var(--primary-color);
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* قائمة القصص */
+    .story-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    @media (min-width: 768px) {
+      .story-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .story-card {
+      background: color-mix(in srgb, var(--card-bg) 95%, transparent);
+      border-radius: 16px;
+      padding: 18px;
+      border: 1px solid color-mix(in srgb, var(--primary-color) 20%, transparent);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .story-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      border-color: var(--primary-color);
+    }
+
+    .story-card.read::after {
+      content: "✓ مقروء";
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: var(--secondary-color);
+      color: #000;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+
+    .story-title {
+      font-family: 'Amiri', serif;
+      font-size: 1.3rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .story-excerpt {
+      color: var(--text-color);
+      line-height: 1.6;
+      opacity: 0.9;
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .value-badge {
+      display: inline-block;
+      background: color-mix(in srgb, var(--accent-color) 15%, transparent);
+      color: var(--text-color);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      margin-right: 8px;
+      margin-bottom: 8px;
+      border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
+    }
+
+    .story-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      font-size: 0.85rem;
+      color: var(--text-color);
+      opacity: 0.8;
+    }
+
+    /* زر تحميل المزيد */
+    .load-more {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 30px;
+      background: linear-gradient(45deg, var(--primary-dark), var(--primary-color));
+      color: #000;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .load-more:hover {
+      transform: scale(1.05);
+      filter: brightness(1.1);
+    }
+
+    /* أزرار السمة */
+    .theme-selector {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .theme-btn {
+      height: 50px;
+      border-radius: 10px;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .theme-btn.active {
+      border-color: var(--text-color);
+      transform: scale(1.05);
+    }
+
+    .theme-btn.active::after {
+      content: "✓";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .theme-btn.gold { background: linear-gradient(135deg, #c5a059, #8e6d2d); }
+    .theme-btn.blue { background: linear-gradient(135deg, #3498db, #1d6fa5); }
+    .theme-btn.green { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+    .theme-btn.purple { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+    .theme-btn.orange { background: linear-gradient(135deg, #e67e22, #d35400); }
+    .theme-btn.gold-day { background: linear-gradient(135deg, #d4a85a, #a67b38); }
+    .theme-btn.blue-day { background: linear-gradient(135deg, #3498db, #1d6fa5); }
+    .theme-btn.green-day { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+    .theme-btn.purple-day { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+    .theme-btn.orange-day { background: linear-gradient(135deg, #e67e22, #d35400); }
+
+    .theme-label {
+      font-size: 0.8rem;
+      text-align: center;
+      margin-top: 5px;
+      color: var(--text-color);
+    }
+
+    /* تفاصيل القصة */
+    .story-detail {
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .story-quote {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+      border-right: 4px solid var(--primary-color);
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--text-color);
+    }
+
+    /* أزرار التحكم */
+    .action-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .action-btn {
+      flex: 1;
+      padding: 12px;
+      border-radius: 12px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .action-btn.favorite {
+      background: var(--secondary-color);
+      color: #000;
+    }
+
+    .action-btn.share {
+      background: var(--accent-color);
+      color: #000;
+    }
+
+    .action-btn.back {
+      background: var(--soft-white);
+      color: var(--text-color);
+    }
+
+    .action-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* تأثيرات التحميل */
+    .fade-in {
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* زر العودة إلى الأعلى */
+    .scroll-top {
+      position: fixed;
+      bottom: 80px;
+      left: 20px;
+      background: var(--primary-color);
+      color: #000;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: var(--transition);
+      z-index: 999;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* بحث */
+    .search-box {
+      width: 100%;
+      padding: 15px;
+      border-radius: 12px;
+      border: 1px solid var(--soft-white);
+      background: color-mix(in srgb, var(--card-bg) 95%, transparent);
+      color: var(--text-color);
+      font-size: 1rem;
+      transition: var(--transition);
+      margin-bottom: 20px;
+    }
+
+    .search-box:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--primary-color) 30%, transparent);
+    }
+
+    /* الإحصائيات */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .stat-item {
+      background: color-mix(in srgb, var(--primary-color) 10%, transparent);
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      border: 1px solid color-mix(in srgb, var(--primary-color) 30%, transparent);
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-color);
+      opacity: 0.9;
+    }
+
+    /* رسالة الفارغ */
+    .empty-message {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-color);
+      opacity: 0.7;
+    }
+
+    .empty-message i {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+  </style>
+</head>
+<body id="app-body">
+  <div class="header-section">
+    <h1>قصص القيم والشجاعة</h1>
+    <p id="current-date"></p>
+    <div id="current-theme" style="font-size: 0.9rem; color: var(--primary-color); margin-top: 5px;"></div>
+  </div>
+
+  <main class="main-content">
+    <div id="page-content"></div>
+  </main>
+
+  <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <nav class="bottom-nav" role="navigation">
+    <button class="nav-item active" data-tab="home" onclick="loadTab('home')">
+      <i class="fas fa-home"></i>
+      <span>الرئيسية</span>
+    </button>
+    <button class="nav-item" data-tab="prophets" onclick="loadTab('prophets')">
+      <i class="fas fa-user-circle"></i>
+      <span>قصص الرسل</span>
+    </button>
+    <button class="nav-item" data-tab="companions" onclick="loadTab('companions')">
+      <i class="fas fa-users"></i>
+      <span>قصص الصحابة</span>
+    </button>
+    <button class="nav-item" data-tab="followers" onclick="loadTab('followers')">
+      <i class="fas fa-star"></i>
+      <span>قصص التابعين</span>
+    </button>
+    <button class="nav-item" data-tab="themes" onclick="loadTab('themes')">
+      <i class="fas fa-palette"></i>
+      <span>السمات</span>
+    </button>
+  </nav>
+
+<script>
+/* الإعدادات */
+const CHUNK_SIZE = 10;
+const FILE_MAP = { 
+  prophets: 'prophets.json', 
+  companions: 'companions.json', 
+  followers: 'followers.json' 
+};
+
+const StoriesDB = { prophets: [], companions: [], followers: [] };
+const loaded = { prophets: 0, companions: 0, followers: 0 };
+let AppState = {
+  read: JSON.parse(localStorage.getItem('read_stories') || '[]'),
+  favorites: JSON.parse(localStorage.getItem('favorite_stories') || '[]'),
+  theme: localStorage.getItem('app_theme') || 'default',
+  currentTab: 'home'
+};
+
+/* السمات المتاحة */
+const Themes = [
+  { id: "default", name: "ذهبي ليلي", class: "" },
+  { id: "blue", name: "أزرق سماوي", class: "theme-blue" },
+  { id: "green", name: "أخضر نقي", class: "theme-green" },
+  { id: "purple", name: "أرجواني", class: "theme-purple" },
+  { id: "orange", name: "برتقالي دافئ", class: "theme-orange" },
+  { id: "gold-day", name: "ذهبي نهاري", class: "theme-gold-day" },
+  { id: "blue-day", name: "أزرق نهاري", class: "theme-blue-day" },
+  { id: "green-day", name: "أخضر نهاري", class: "theme-green-day" },
+  { id: "purple-day", name: "أرجواني نهاري", class: "theme-purple-day" },
+  { id: "orange-day", name: "برتقالي نهاري", class: "theme-orange-day" }
+];
+
+/* تطبيق السمة */
+function applyTheme(themeId = AppState.theme) {
+  const body = document.getElementById('app-body');
+  
+  // إزالة جميع كلاسات السمات
+  Themes.forEach(theme => {
+    if (theme.class) body.classList.remove(theme.class);
+  });
+  
+  // تطبيق السمة الجديدة إذا لم تكن الافتراضية
+  const selectedTheme = Themes.find(t => t.id === themeId);
+  if (selectedTheme && selectedTheme.class) {
+    body.classList.add(selectedTheme.class);
+  }
+  
+  // تحديث الذاكرة وحفظ الاختيار
+  AppState.theme = themeId;
+  localStorage.setItem('app_theme', themeId);
+  
+  // تحديث اسم السمة في أعلى الشاشة
+  const themeNameDisplay = document.getElementById('current-theme');
+  if (themeNameDisplay) {
+    themeNameDisplay.textContent = `السمة: ${selectedTheme ? selectedTheme.name : "ذهبي ليلي"}`;
+  }
+}
+
+/* توليد تاريخ عربي */
+function getArabicDate() {
+  const now = new Date();
+  const options = { 
+    weekday: 'long', 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  };
+  return now.toLocaleDateString('ar-SA', options);
+}
+
+/* تحميل ملف */
+async function loadFile(category) {
+  if (!FILE_MAP[category]) return [];
+  if (StoriesDB[category] && StoriesDB[category].length) return StoriesDB[category];
+  
+  try {
+    const response = await fetch(FILE_MAP[category]);
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    const data = await response.json();
+    StoriesDB[category] = Array.isArray(data.entries) ? data.entries : [];
+    return StoriesDB[category];
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
+
+/* الصفحة الرئيسية */
+async function renderHome() {
+  const content = document.getElementById('page-content');
+  content.className = 'fade-in';
+  
+  // تحميل الملفات للحصول على الإحصائيات
+  await Promise.all([
+    loadFile('prophets'),
+    loadFile('companions'),
+    loadFile('followers')
+  ]);
+  
+  const totalStories = StoriesDB.prophets.length + StoriesDB.companions.length + StoriesDB.followers.length;
+  const readCount = AppState.read.length;
+  const favoritesCount = AppState.favorites.length;
+  
+  content.innerHTML = `
+    <div class="card">
+      <div class="card-title"><i class="fas fa-chart-line"></i> إحصائياتك</div>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-value">${totalStories}</div>
+          <div class="stat-label">القصص المجمعة</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">${readCount}</div>
+          <div class="stat-label">مقروءة</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">${favoritesCount}</div>
+          <div class="stat-label">مفضلة</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-value">${totalStories - readCount}</div>
+          <div class="stat-label">متبقية للقراءة</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="fas fa-search"></i> بحث في القصص</div>
+      <input 
+        type="text" 
+        id="search-input" 
+        class="search-box" 
+        placeholder="اكتب للبحث في القصص (عنوان، محتوى، قيم...)" 
+        oninput="searchStories(this.value)"
+      />
+      <div id="search-results"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="fas fa-lightbulb"></i> نصائح للاستخدام</div>
+      <ul style="padding-right: 20px; line-height: 1.8;">
+        <li>اختر سمة تناسب ذوقك من صفحة السمات</li>
+        <li>يمكنك البحث في القصص باستخدام أي كلمة مفتاحية</li>
+        <li>اضغط على أي قصة لعرض تفاصيلها الكاملة</li>
+        <li>يمكنك إضافة القصص المفضلة لديك إلى قائمة المفضلة</li>
+        <li>شارك القصص الملهمة مع الآخرين</li>
+      </ul>
+    </div>
+  `;
+}
+
+/* عرض الفئة */
+async function renderCategory(category, title, icon) {
+  await loadFile(category);
+  loaded[category] = loaded[category] || 0;
+  const stories = StoriesDB[category] || [];
+  
+  const content = document.getElementById('page-content');
+  content.className = 'fade-in';
+  
+  content.innerHTML = `
+    <div class="card">
+      <div class="card-title"><i class="fas ${icon}"></i> ${title}</div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterStories('${category}', 'all', this)">الكل</button>
+        <button class="filter-btn" onclick="filterStories('${category}', 'read', this)">المقروءة</button>
+        <button class="filter-btn" onclick="filterStories('${category}', 'unread', this)">غير المقروءة</button>
+        <button class="filter-btn" onclick="filterStories('${category}', 'favorite', this)">المفضلة</button>
+      </div>
+      <div id="stories-container" class="story-list"></div>
+      ${stories.length > loaded[category] ? 
+        `<button class="load-more" onclick="loadMoreStories('${category}')">تحميل المزيد</button>` : 
+        ''
+      }
+    </div>
+  `;
+  
+  renderStoriesChunk(category, 'all');
+}
+
+/* عرض دفعة من القصص */
+function renderStoriesChunk(category, filter) {
+  const stories = StoriesDB[category] || [];
+  let filteredStories = stories;
+  
+  if (filter === 'read') {
+    filteredStories = stories.filter(story => AppState.read.includes(story.id));
+  } else if (filter === 'unread') {
+    filteredStories = stories.filter(story => !AppState.read.includes(story.id));
+  } else if (filter === 'favorite') {
+    filteredStories = stories.filter(story => AppState.favorites.includes(story.id));
+  }
+  
+  const container = document.getElementById('stories-container');
+  if (!container) return;
+  
+  const start = loaded[category];
+  const end = start + CHUNK_SIZE;
+  const chunk = filteredStories.slice(start, end);
+  
+  if (chunk.length === 0 && start === 0) {
+    container.innerHTML = `
+      <div class="empty-message">
+        <i class="fas fa-book-open"></i>
+        <p>لا توجد قصص متاحة</p>
+      </div>
+    `;
+    return;
+  }
+  
+  chunk.forEach(story => {
+    const isRead = AppState.read.includes(story.id);
+    const isFavorite = AppState.favorites.includes(story.id);
+    
+    const storyCard = document.createElement('div');
+    storyCard.className = `story-card ${isRead ? 'read' : ''}`;
+    storyCard.onclick = () => showStoryDetail(story.id, category);
+    
+    storyCard.innerHTML = `
+      ${isRead ? '' : ''}
+      <div class="story-title">${story.title || 'بدون عنوان'}</div>
+      <div class="story-excerpt">${(story.content || '').substring(0, 150)}...</div>
+      <div>
+        ${(story.values || []).slice(0, 3).map(value => 
+          `<span class="value-badge">${value}</span>`
+        ).join('')}
+      </div>
+      <div class="story-meta">
+        <span>${story.character || 'غير محدد'}</span>
+        <span>${isFavorite ? '❤️' : ''}</span>
+      </div>
+    `;
+    
+    container.appendChild(storyCard);
+  });
+  
+  loaded[category] += chunk.length;
+  
+  // إخفاء زر تحميل المزيد إذا لم يبق شيء
+  const loadMoreBtn = document.querySelector('.load-more');
+  if (loadMoreBtn && loaded[category] >= filteredStories.length) {
+    loadMoreBtn.style.display = 'none';
+  }
+}
+
+/* تحميل المزيد */
+function loadMoreStories(category) {
+  const currentFilter = document.querySelector('.filter-btn.active');
+  const filterType = currentFilter ? currentFilter.getAttribute('onclick').match(/'([^']+)'/)[1] : 'all';
+  renderStoriesChunk(category, filterType);
+}
+
+/* تصفية القصص */
+function filterStories(category, filter, button) {
+  // تحديث الأزرار النشطة
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  button.classList.add('active');
+  
+  // إعادة تعيين المحمل
+  loaded[category] = 0;
+  const container = document.getElementById('stories-container');
+  if (container) {
+    container.innerHTML = '';
+  }
+  
+  renderStoriesChunk(category, filter);
+}
+
+/* البحث */
+function searchStories(query) {
+  const searchResults = document.getElementById('search-results');
+  if (!searchResults) return;
+  
+  if (!query.trim()) {
+    searchResults.innerHTML = '';
+    return;
+  }
+  
+  const allStories = [
+    ...StoriesDB.prophets,
+    ...StoriesDB.companions,
+    ...StoriesDB.followers
+  ];
+  
+  const lowerQuery = query.toLowerCase();
+  const results = allStories.filter(story => {
+    const searchText = (story.title + ' ' + story.content + ' ' + (story.values || []).join(' ') + ' ' + story.character).toLowerCase();
+    return searchText.includes(lowerQuery);
+  });
+  
+  if (results.length === 0) {
+    searchResults.innerHTML = `
+      <div class="empty-message">
+        <i class="fas fa-search"></i>
+        <p>لا توجد نتائج للبحث</p>
+      </div>
+    `;
+    return;
+  }
+  
+  let html = `
+    <div style="margin-top: 20px;">
+      <div style="color: var(--primary-color); margin-bottom: 15px; font-weight: bold;">
+        <i class="fas fa-search"></i> ${results.length} نتيجة للبحث
+      </div>
+      <div class="story-list">
+  `;
+  
+  results.slice(0, 10).forEach(story => {
+    const isRead = AppState.read.includes(story.id);
+    html += `
+      <div class="story-card ${isRead ? 'read' : ''}" onclick="showStoryDetail(${story.id}, '${story.category || 'prophets'}')">
+        <div class="story-title">${story.title}</div>
+        <div class="story-excerpt">${(story.content || '').substring(0, 120)}...</div>
+        <div class="story-meta">
+          <span>${story.character || 'غير محدد'}</span>
+          <span>${story.category === 'prophets' ? 'الرسل' : story.category === 'companions' ? 'الصحابة' : 'التابعين'}</span>
+        </div>
+      </div>
+    `;
+  });
+  
+  html += `</div></div>`;
+  searchResults.innerHTML = html;
+}
+
+/* عرض تفاصيل القصة */
+function showStoryDetail(storyId, category) {
+  const allStories = [
+    ...StoriesDB.prophets,
+    ...StoriesDB.companions,
+    ...StoriesDB.followers
+  ];
+  
+  const story = allStories.find(s => s.id === storyId);
+  if (!story) return;
+  
+  // وضع علامة كمقروءة
+  if (!AppState.read.includes(storyId)) {
+    AppState.read.push(storyId);
+    localStorage.setItem('read_stories', JSON.stringify(AppState.read));
+  }
+  
+  const isFavorite = AppState.favorites.includes(storyId);
+  
+  const content = document.getElementById('page-content');
+  content.className = 'fade-in';
+  
+  content.innerHTML = `
+    <div class="card">
+      <button class="action-btn back" onclick="loadTab('${category}')">
+        <i class="fas fa-arrow-right"></i> العودة
+      </button>
+      
+      <div style="margin-top: 20px;">
+        <div class="story-title" style="font-size: 1.8rem; margin-bottom: 10px;">${story.title}</div>
+        
+        <div style="display: flex; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+          <div style="background: color-mix(in srgb, var(--primary-color) 15%, transparent); padding: 8px 15px; border-radius: 20px;">
+            <i class="fas fa-user"></i> ${story.character || 'غير محدد'}
+          </div>
+          <div style="background: color-mix(in srgb, var(--accent-color) 15%, transparent); padding: 8px 15px; border-radius: 20px;">
+            <i class="fas fa-clock"></i> ${story.period || 'غير محدد'}
+          </div>
+          <div style="background: color-mix(in srgb, var(--secondary-color) 15%, transparent); padding: 8px 15px; border-radius: 20px;">
+            <i class="fas fa-book"></i> ${category === 'prophets' ? 'قصص الرسل' : category === 'companions' ? 'قصص الصحابة' : 'قصص التابعين'}
+          </div>
+        </div>
+        
+        <div class="story-detail">
+          ${(story.content || '').split('\n').map(paragraph => 
+            paragraph.trim() ? `<p>${paragraph}</p>` : ''
+          ).join('')}
+        </div>
+        
+        ${story.quote ? `
+          <div class="story-quote">
+            <i class="fas fa-quote-right" style="float: left; color: var(--primary-color); margin-left: 10px;"></i>
+            <p>${story.quote}</p>
+          </div>
+        ` : ''}
+        
+        ${story.values && story.values.length > 0 ? `
+          <div style="margin-top: 25px;">
+            <div style="color: var(--primary-color); font-weight: bold; margin-bottom: 10px;">
+              <i class="fas fa-star"></i> القيم المستفادة
+            </div>
+            <div>
+              ${story.values.map(value => `<span class="value-badge">${value}</span>`).join('')}
+            </div>
+          </div>
+        ` : ''}
+        
+        <div class="action-buttons">
+          <button class="action-btn favorite" onclick="toggleFavorite(${storyId})">
+            <i class="fas ${isFavorite ? 'fa-heart' : 'fa-heart'}"></i>
+            ${isFavorite ? 'إزالة من المفضلة' : 'إضافة للمفضلة'}
+          </button>
+          <button class="action-btn share" onclick="shareStory(${storyId})">
+            <i class="fas fa-share"></i> مشاركة القصة
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* إضافة/إزالة من المفضلة */
+function toggleFavorite(storyId) {
+  const index = AppState.favorites.indexOf(storyId);
+  if (index > -1) {
+    AppState.favorites.splice(index, 1);
+  } else {
+    AppState.favorites.push(storyId);
+  }
+  localStorage.setItem('favorite_stories', JSON.stringify(AppState.favorites));
+  
+  // إذا كنا في صفحة تفاصيل القصة، نحدث الزر
+  const favoriteBtn = document.querySelector('.action-btn.favorite');
+  if (favoriteBtn) {
+    const isFavorite = AppState.favorites.includes(storyId);
+    favoriteBtn.innerHTML = `
+      <i class="fas fa-heart"></i>
+      ${isFavorite ? 'إزالة من المفضلة' : 'إضافة للمفضلة'}
+    `;
+  }
+}
+
+/* مشاركة القصة */
+async function shareStory(storyId) {
+  const allStories = [
+    ...StoriesDB.prophets,
+    ...StoriesDB.companions,
+    ...StoriesDB.followers
+  ];
+  
+  const story = allStories.find(s => s.id === storyId);
+  if (!story) return;
+  
+  const shareText = `${story.title}\n\n${story.content.substring(0, 150)}...\n\nمن تطبيق قصص القيم والشجاعة`;
+  
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: story.title,
+        text: shareText,
+        url: window.location.href
+      });
+    } catch (error) {
+      console.log('تم إلغاء المشاركة');
+    }
+  } else if (navigator.clipboard) {
+    try {
+      await navigator.clipboard.writeText(shareText);
+      alert('تم نسخ نص القصة إلى الحافظة');
+    } catch (error) {
+      alert('تعذر نسخ النص');
+    }
+  }
+}
+
+/* عرض السمات */
+function renderThemes() {
+  const content = document.getElementById('page-content');
+  content.className = 'fade-in';
+  
+  content.innerHTML = `
+    <div class="card">
+      <div class="card-title"><i class="fas fa-palette"></i> اختيار سمة التطبيق</div>
+      <p style="text-align: center; margin-bottom: 20px;">اختر سمة تلائم ذوقك وتفضل استخدامها</p>
+      
+      <div style="color: var(--primary-color); font-weight: bold; margin-bottom: 15px;">
+        <i class="fas fa-moon"></i> السمات الليلية
+      </div>
+      <div class="theme-selector">
+        ${Themes.filter(theme => !theme.id.includes('day')).map(theme => `
+          <div>
+            <button class="theme-btn ${theme.id} ${AppState.theme === theme.id ? 'active' : ''}" 
+                    onclick="changeTheme('${theme.id}')" title="${theme.name}">
+            </button>
+            <div class="theme-label">${theme.name}</div>
+          </div>
+        `).join('')}
+      </div>
+      
+      <div style="color: var(--primary-color); font-weight: bold; margin: 25px 0 15px;">
+        <i class="fas fa-sun"></i> السمات النهارية
+      </div>
+      <div class="theme-selector">
+        ${Themes.filter(theme => theme.id.includes('day')).map(theme => `
+          <div>
+            <button class="theme-btn ${theme.id} ${AppState.theme === theme.id ? 'active' : ''}" 
+                    onclick="changeTheme('${theme.id}')" title="${theme.name}">
+            </button>
+            <div class="theme-label">${theme.name}</div>
+          </div>
+        `).join('')}
+      </div>
+      
+      <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--soft-white);">
+        <div style="color: var(--primary-color); font-weight: bold; margin-bottom: 15px;">معلومات السمة الحالية</div>
+        <div style="display: flex; gap: 15px; flex-wrap: wrap; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 20px; height: 20px; border-radius: 4px; background: var(--primary-color);"></div>
+            <span>اللون الرئيسي</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 20px; height: 20px; border-radius: 4px; background: var(--secondary-color);"></div>
+            <span>لون التأكيد</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 20px; height: 20px; border-radius: 4px; background: var(--accent-color);"></div>
+            <span>لون التمييز</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="width: 20px; height: 20px; border-radius: 4px; background: var(--bg-color); border: 1px solid var(--soft-white);"></div>
+            <span>لون الخلفية</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="fas fa-download"></i> التحكم في البيانات</div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <button class="action-btn" onclick="exportData()" style="background: var(--accent-color);">
+          <i class="fas fa-download"></i> تصدير بياناتي
+        </button>
+        <button class="action-btn" onclick="resetData()" style="background: #e74c3c;">
+          <i class="fas fa-trash"></i> إعادة تعيين التقدم
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><i class="fas fa-circle-info"></i> حول التطبيق</div>
+      <p>تطبيق <span style="color: var(--primary-color)">قصص القيم والشجاعة</span></p>
+      <p style="font-size: 0.9rem; line-height: 1.6; margin-top: 10px;">
+        تطبيق يجمع قصصاً ملهمة من تاريخ الإسلام، مقسمة إلى ثلاث فئات:<br>
+        - قصص الرسل والأنبياء<br>
+        - قصص الصحابة الكرام<br>
+        - قصص التابعين والصالحين
+      </p>
+      <div style="display: flex; gap: 15px; margin-top: 15px; justify-content: center;">
+        <div style="text-align: center;">
+          <i class="fas fa-book" style="color: var(--primary-color); font-size: 1.5rem;"></i>
+          <div style="font-size: 0.7rem;">قصص ملهمة</div>
+        </div>
+        <div style="text-align: center;">
+          <i class="fas fa-heart" style="color: #e74c3c; font-size: 1.5rem;"></i>
+          <div style="font-size: 0.7rem;">قيم وأخلاق</div>
+        </div>
+        <div style="text-align: center;">
+          <i class="fas fa-shield-alt" style="color: var(--secondary-color); font-size: 1.5rem;"></i>
+          <div style="font-size: 0.7rem;">خصوصية تامة</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+/* تصدير البيانات */
+function exportData() {
+  const data = {
+    readStories: AppState.read,
+    favoriteStories: AppState.favorites,
+    currentTheme: AppState.theme,
+    exportDate: new Date().toISOString(),
+    appName: 'قصص القيم والشجاعة'
+  };
+  
+  const dataStr = JSON.stringify(data, null, 2);
+  const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
+  
+  const linkElement = document.createElement('a');
+  linkElement.setAttribute('href', dataUri);
+  linkElement.setAttribute('download', 'قصص-القيم-والشجاعة-بيانات.json');
+  linkElement.click();
+  
+  alert('تم تصدير بياناتك بنجاح!');
+}
+
+/* إعادة تعيين البيانات */
+function resetData() {
+  if (confirm('هل أنت متأكد من إعادة تعيين التقدم؟ سيتم حذف جميع القصص المقروءة والمفضلة.')) {
+    AppState.read = [];
+    AppState.favorites = [];
+    localStorage.removeItem('read_stories');
+    localStorage.removeItem('favorite_stories');
+    alert('تم إعادة تعيين التقدم بنجاح');
+    loadTab('home');
+  }
+}
+
+/* تغيير السمة */
+function changeTheme(themeId) {
+  applyTheme(themeId);
+  
+  // إذا كنا في صفحة السمات، نقوم بتحديث العرض
+  if (AppState.currentTab === 'themes') {
+    renderThemes();
+  }
+}
+
+/* تحميل التبويب */
+function loadTab(tabName) {
+  AppState.currentTab = tabName;
+  
+  // تحديث شريط التنقل السفلي
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.classList.remove('active');
+    if (item.dataset.tab === tabName) {
+      item.classList.add('active');
+    }
+  });
+  
+  // تحميل المحتوى المناسب
+  switch(tabName) {
+    case 'home':
+      renderHome();
+      break;
+    case 'prophets':
+      renderCategory('prophets', 'قصص الرسل والأنبياء', 'fa-user-circle');
+      break;
+    case 'companions':
+      renderCategory('companions', 'قصص الصحابة الكرام', 'fa-users');
+      break;
+    case 'followers':
+      renderCategory('followers', 'قصص التابعين والصالحين', 'fa-star');
+      break;
+    case 'themes':
+      renderThemes();
+      break;
+  }
+  
+  // العودة لأعلى الصفحة
+  window.scrollTo(0, 0);
+}
+
+/* العودة للأعلى */
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+/* التحكم في زر العودة للأعلى */
+function handleScroll() {
+  const scrollTopBtn = document.getElementById('scrollTop');
+  if (window.scrollY > 300) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
+}
+
+/* تهيئة التطبيق */
+window.onload = () => {
+  // تطبيق السمة المحفوظة
+  applyTheme();
+  
+  // تحديث التاريخ
+  document.getElementById('current-date').textContent = getArabicDate();
+  
+  // تحميل الصفحة الرئيسية
+  renderHome();
+  
+  // تحديث التاريخ كل دقيقة
+  setInterval(() => {
+    document.getElementById('current-date').textContent = getArabicDate();
+  }, 60000);
+  
+  // إضافة مستمع للتمرير
+  window.addEventListener('scroll', handleScroll);
+};
+</script>
+</body>
+</html>

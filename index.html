@@ -1308,6 +1308,11 @@ window.onload = () => {
   // إضافة مستمع للتمرير
   window.addEventListener('scroll', handleScroll);
 };
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/Biography-of-the-Righteous/sw.js');
+  });
+}
 </script>
 </body>
 </html>

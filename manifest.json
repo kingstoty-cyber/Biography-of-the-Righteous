@@ -1,22 +1,42 @@
 {
-  "short_name": "سير الصالحين",
   "name": "سير الصالحين والأبرار",
+  "short_name": "سير الصالحين",
+  "description": "تطبيق تعليمي يعرض قصص وسير الصحابة والتابعين والقيم الإسلامية والشجاعة بأسلوب تفاعلي حديث.",
+  "id": "/Biography-of-the-Righteous/",
+  "start_url": "/Biography-of-the-Righteous/",
+  "display": "standalone",
+  "background_color": "#0a0b10",
+  "theme_color": "#c5a059",
+  "orientation": "portrait",
+  "categories": ["education", "books", "history"],
   "icons": [
     {
       "src": "icon-192.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "any maskable"
     },
     {
       "src": "icon-512.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": "/Biography-of-the-Righteous/",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "theme_color": "#2c3e50",
-  "scope": "/Biography-of-the-Righteous/",
-  "orientation": "portrait"
+  "screenshots": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "الواجهة الرئيسية للتطبيق"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "تصفح قصص الصالحين"
+    }
+  ]
 }

@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.kingstoty_cyber.twa",
+        "sha256_cert_fingerprints": ["60:EA:75:C1:B0:9C:B1:20:55:81:A0:4E:19:F4:41:5B:EF:C1:C4:2A:2A:BA:6D:49:97:A3:30:D1:69:54:38:02"]
+      }
+    }]
